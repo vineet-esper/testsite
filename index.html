@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esper Test Site</title>
-  </head>
-  <body>
-    <h1>Esper Test Site</h1>
-    <iframe src="http://localhost:3000/login?serviceuser=true&device_id=d5434a0a-6c87-445c-8681-15e783e4b819&token=5rXMrBfG2z4ba4Y8z4KSaZTjQuVrP2" width="100%" height="700px" style="border: none;"></iframe>
-  </body>
+    <title>Test Iframe</title>
+    <script>
+        window.onload = () => {
+            console.log("---------- WINDOW LOADED ----------");
+
+            const iframe = document.querySelector("iframe");
+                
+            const authData = {
+                token: "5rXMrBfG2z4ba4Y8z4KSaZTjQuVrP2",  
+                resource_type: "devices",
+                resource_id: "0af70262-3770-449d-bee5-04f363b4f169" // device id
+            };
+
+            iframe.contentWindow.postMessage(authData, "https://maximus.esper.cloud/login");
+        };
+    </script>
+</head>
+<body style="font-family: 'Helvetica', 'Arial', sans-serif;">
+    <h1>Parent Page</h1>
+    <h3>Running on localhost:8080</h3>
+   <div style="display: flex; justify-content: center; width: 100%;">
+        <iframe 
+            id="myIframe"
+            src="https://maximus.esper.cloud/login" 
+            width="90%" 
+            height="800px" 
+            style="border: 2px solid black;">
+        </iframe>
+    </div>
+    
+</body>
 </html>
