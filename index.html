@@ -16,6 +16,8 @@
                 resource_id: "10de4058-cfbd-4d76-b65e-7416c90b35f8" // device id
             };
 
+            iframe.src = `https://maximus.esper.cloud/login?$t=${Date.now()}`
+
             iframe.contentWindow.postMessage(authData, "https://maximus.esper.cloud/login");
         };
     </script>
@@ -26,11 +28,10 @@
    <div style="display: flex; justify-content: center; width: 100%;">
         <iframe 
             id="myIframe"
-            src="https://maximus.esper.cloud/login" 
             width="90%" 
             height="800px" 
-            style="border: 2px solid black;">
-        </iframe>
+            style="border: 2px solid black;"
+        ></iframe>
     </div>
     
 </body>
