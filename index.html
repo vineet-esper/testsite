@@ -16,9 +16,11 @@
                 resource_id: "10de4058-cfbd-4d76-b65e-7416c90b35f8" // device id
             };
 
-            iframe.src = `https://maximus.esper.cloud/login?$t=${Date.now()}`
+            const t = Date.now()
 
-            iframe.contentWindow.postMessage(authData, "https://maximus.esper.cloud/login");
+            iframe.src = `https://maximus.esper.cloud/login?t=${t}`
+
+            iframe.contentWindow.postMessage(authData, `https://maximus.esper.cloud/login?t=${t}`);
         };
     </script>
 </head>
