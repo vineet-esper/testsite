@@ -18,9 +18,9 @@
 
             const t = Date.now()
 
-            iframe.src = `https://testinit.esper.cloud/login?t=${t}`
+            // iframe.src = `https://maximus.esper.cloud/login?t=${t}`
 
-            iframe.contentWindow.postMessage(authData, `https://testinit.esper.cloud/login?t=${t}`);
+            iframe.contentWindow.postMessage(authData, `https://testinit.esper.cloud/login`);
         };
     </script>
 </head>
@@ -31,7 +31,8 @@
         <iframe 
             id="myIframe"
             width="90%" 
-            height="800px" 
+            height="800px"
+            src="https://testinit.esper.cloud/login"
             style="border: 2px solid black;"
         ></iframe>
     </div>
